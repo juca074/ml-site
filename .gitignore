@@ -5,3 +5,10 @@ __pycache__/
 *.py[cod]
 data/
 .DS_Store
+*.zip
+*.tar.gz
+.git/
+node_modules/
+*.log
+*.tmp
+adidas.zip
