@@ -1,0 +1,10 @@
+.DS_Store
+*.zip
+*.tar.gz
+.git/
+node_modules/
+.env
+.env.local
+*.log
+*.tmp
+adidas.zip
